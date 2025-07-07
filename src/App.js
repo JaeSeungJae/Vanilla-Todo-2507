@@ -22,12 +22,9 @@ function App({ $target }) {
   };
 
   const onToggle = (id) => {
-    const nextState = todoList.state.map((todo) => {
-      if (todo.id === id) {
-        return { ...todo, checked: !todo.checked };
-      }
-      return todo;
-    });
+    const nextState = todoList.state.map((todo) =>
+      todo.id == id ? { ...todo, checked: !todo.checked } : todo
+    );
     todoList.setState(nextState);
   };
 
